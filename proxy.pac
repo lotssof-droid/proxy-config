@@ -3,7 +3,10 @@ function FindProxyForURL(url, host) {
     if (shExpMatch(host, "*2ip.ru") || host === "2ip.ru" ||
         shExpMatch(host, "*gemini.google.com") || host === "gemini.google.com" ||
         shExpMatch(host, "*rutracker.org") || host === "rutracker.org" ||
-        shExpMatch(host, "*myip.com") || host === "myip.com") {
+        shExpMatch(host, "*myip.com") || host === "myip.com" ||
+        shExpMatch(host, "*freepik.com") || host === "freepik.com"||
+        shExpMatch(host, "*chatgpt.com") || host === "chatgpt.com"||
+        shExpMatch(host, "*ideogram.ai") || host === "ideogram.ai") {
         
         // прописываем прокси сервер
         return "PROXY 10.241.30.30:3128"; 
