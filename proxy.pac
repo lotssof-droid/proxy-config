@@ -4,8 +4,8 @@ function FindProxyForURL(url, host) {
         shExpMatch(host, "*gemini.google.com") || host === "gemini.google.com" ||
         shExpMatch(host, "*rutracker.org") || host === "rutracker.org" ||
         shExpMatch(host, "*myip.com") || host === "myip.com" ||
-        shExpMatch(host, "*freepik.com") || host === "freepik.com"||
-        shExpMatch(host, "*chatgpt.com") || host === "chatgpt.com"||
+        shExpMatch(host, "*freepik.com") || host === "freepik.com" ||
+        shExpMatch(host, "*chatgpt.com") || host === "chatgpt.com" ||
         shExpMatch(host, "*ideogram.ai") || host === "ideogram.ai") {
         
         // прописываем прокси сервер
