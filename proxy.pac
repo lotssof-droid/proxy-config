@@ -4,7 +4,7 @@ function FindProxyForURL(url, host) {
         shExpMatch(host, "*gemini.google.com") || host === "gemini.google.com") {
         
         // ВАЖНО: Замените эти цифры на IP-адрес и порт вашего реального прокси!
-        return "PROXY 192.168.1.100:8080"; 
+        return "PROXY 10.241.30.30:3128"; 
     }
     
     // Для всех остальных сайтов используем обычный интернет (напрямую)
