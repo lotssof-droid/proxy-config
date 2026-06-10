@@ -10,6 +10,7 @@ function FindProxyForURL(url, host) {
         shExpMatch(host, "*banana-ai.org") || host === "banana-ai.org" ||
         shExpMatch(host, "*abacus.ai") || host === "abacus.ai" ||
         shExpMatch(host, "*grok.com") || host === "grok.com" ||
+        shExpMatch(host, "*openai.com") || host === "openai.com" ||
         shExpMatch(host, "*lupaupscaler.com") || host === "lupaupscaler.com") {
         
         // прописываем прокси сервер
