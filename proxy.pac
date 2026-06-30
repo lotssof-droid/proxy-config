@@ -14,6 +14,7 @@ function FindProxyForURL(url, host) {
         shExpMatch(host, "*amnezia.org") || host === "amnezia.org" ||
         shExpMatch(host, "*oaiusercontent.com") || host === "oaiusercontent.com" ||
         shExpMatch(host, "*pixmira.ai") || host === "pixmira.ai" ||
+        shExpMatch(host, "*jetbrains.com") || host === "jetbrains.com" ||
         shExpMatch(host, "*lupaupscaler.com") || host === "lupaupscaler.com") {
         
         // прописываем прокси сервер
