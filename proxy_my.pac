@@ -3,6 +3,7 @@ function FindProxyForURL(url, host) {
 
     // Ваш HTTP/HTTPS proxy
     var proxy = "PROXY 10.241.30.30:3128";
+return proxy;
 
     // Проверка IP
     if (host == "2ip.ru" || shExpMatch(host, "*.2ip.ru")) {
