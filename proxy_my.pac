@@ -1,47 +1,42 @@
 function FindProxyForURL(url, host) {
+    host = host.toLowerCase();
+
+    // Ваш HTTP/HTTPS proxy
     var proxy = "PROXY 10.241.30.30:3128";
 
-   // Проверка выходного IP
-    if (host === "2ip.ru" || dnsDomainIs(host, ".2ip.ru")) {
+    // Проверка IP
+    if (host == "2ip.ru" || shExpMatch(host, "*.2ip.ru")) {
         return proxy;
     }
 
-    // Gemini
-    var geminiDomains = [
-        "gemini.google.com",
-        "aistudio.google.com",
-        "generativelanguage.googleapis.com",
-        "proactivebackend-pa.googleapis.com",
-        "alkalimining-pa.googleapis.com"
-    ];
-
-    // ChatGPT / OpenAI
-    var chatgptDomains = [
-        "chatgpt.com",
-        "chat.openai.com",
-        "auth.openai.com",
-        "openai.com",
-        "oaistatic.com",
-        "oaiusercontent.com"
-    ];
-
-    // Midjourney
-    var midjourneyDomains = [
-        "midjourney.com"
-    ];
-
-    var proxyDomains = geminiDomains
-        .concat(chatgptDomains)
-        .concat(midjourneyDomains);
-
-    for (var i = 0; i < proxyDomains.length; i++) {
-        var domain = proxyDomains[i];
-
-        if (host === domain || dnsDomainIs(host, "." + domain)) {
-            return proxy;
-        }
+    // Google Gemini
+    if (host == "gemini.google.com" ||
+        host == "aistudio.google.com" ||
+        host == "generativelanguage.googleapis.com" ||
+        shExpMatch(host, "*.gemini.google.com")) {
+        return proxy;
     }
 
-    // Весь остальной трафик — напрямую
+    // ChatGPT / OpenAI
+    if (host == "chatgpt.com" ||
+        host == "chat.openai.com" ||
+        host == "auth.openai.com" ||
+        host == "openai.com" ||
+        host == "oaistatic.com" ||
+        host == "oaiusercontent.com" ||
+        shExpMatch(host, "*.chatgpt.com") ||
+        shExpMatch(host, "*.openai.com") ||
+        shExpMatch(host, "*.oaistatic.com") ||
+        shExpMatch(host, "*.oaiusercontent.com")) {
+        return proxy;
+    }
+
+    // Midjourney
+    if (host == "midjourney.com" ||
+        shExpMatch(host, "*.midjourney.com")) {
+        return proxy;
+    }
+
+    // Остальные сайты — напрямую
     return "DIRECT";
 }
